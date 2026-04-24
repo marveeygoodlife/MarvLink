@@ -23,6 +23,7 @@ body {
     color: var(--accent);
     font-weight: 700;
     font-size: 1.2rem;
+    margin-left: 1rem;
 }
 header {
     height: auto;
@@ -78,6 +79,7 @@ nav ul li a:hover {
     cursor: pointer;
     padding: 2px;
     border: none;
+    margin-right: 1rem;
 }
 span.bar {
     display: flex;
@@ -92,8 +94,7 @@ main {
     margin: 0 auto;
     padding: 12px 10px;
     display: block;
-    border: 1px solid red;
-  }
+   }
  section {
     margin: 5rem auto;
      text-transform:capitalize;
@@ -105,22 +106,35 @@ main {
      min-height: 100vh;
     text-align: center;
     position: relative;
+    border-radius: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 40px 20px;
-    background: url('/images/background.jpeg') center/cover no-repeat;
+    background: url('images/background.jpeg') center/cover no-repeat;
  }
  #hero:before {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(rgba(0,0,0,0.20), rgba(30,144,255, 0.09))
+    background: linear-gradient(rgba(0,0,0,0.20), rgba(30,144,255, 0.07));
+    border-radius: inherit;
  }
  .herocontainer {
     position: relative;
     z-index: 1;
     max-width: 500px;
+    animation: fadeIn 0.8s ease-in-out;
+ }
+ @keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px)
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
  }
 #hero h1 {
     margin-bottom: 1rem;
@@ -167,7 +181,62 @@ border: 1px solid var(--accent);    color:var(--white);
 background: var(--accent);
 }
 
+/* lead form */
+#formsection {
+    background: #0B0F1A;
+    color:#fff;
+    padding:30px 20px;
+    text-align: center;
+}
+#formsection h2 {
+    margin-bottom: 10px;
+}
+#formsection p {
+    color: #ccc;
+    margin-bottom: 20px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 15px  ;
+    border: 1px inset var(--accent);
+    border-radius: 10px;
+    box-shadow: 4px 4px  rgba(30,144,255, 0.07);
+    transition: transform .3s ease-in-out;
+        animation: fadeIn 0.8s ease-in-out;
 
+}
+form:hover {
+transform: translateY(10px);
+}
+input, select {
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+}
+option {
+    width: fit-content;
+}
+button {
+     background: var(--accent);
+     color: #fff;
+     padding: 14px;
+     border-radius: 6px;
+     font-weight:bold;
+     cursor: pointer;
+     border: transparent;
+     outline: none;
+}
+#buyfields, #swapfields, #sellfields {
+display: grid;
+grid-template-columns: 1fr;
+gap: 1rem;
+}
+#swapfields, #sellfields {
+    display: none;
+}
 /* media queries: TABLETs */
 @media screen  and (min-width:768px){
     .herocontainer {
@@ -188,6 +257,16 @@ background: var(--accent);
         width: auto;
         padding: 12px 24px;
     }
+ form {
+        max-width: 500px;
+ }
+
+        #buyfields, #swapfields, #sellfields {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+ }
+ 
+ 
 }
 /* media queries: DESKTOP */
 @media screen and (min-width:1024px) {
@@ -201,5 +280,8 @@ background: var(--accent);
 }
 .herobtns {
     justify-content: flex-start;
+}
+form {
+    max-width: 550px;
 }
 }

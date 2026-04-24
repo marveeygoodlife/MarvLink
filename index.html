@@ -102,9 +102,44 @@
                 <a href="tel:07015824775" class="whatsbtn"> call now</a>
             </div>
         </section>
-        <section>
-            <h2>Hey, want to sell or swap your device?</h2>
-            <p>Send pictures and specifications to Whatsapp.  Get the best price instantly.</p>
+        <section id="formsection">
+            <h2>Buy. Sell. Swap Devices</h2>
+            <p>Fill this form and continue on whatsApp.</p>
+
+            <form action="" id="leadForm">
+                <label>What do you want to do?</label>
+                <select name="action" id="action" aria-label="lead-Action">
+                    <option value="buy"> Buy a device</option>
+                    <option value="sell"> Sell my device</option>
+                    <option value="swap"> Swap / Upgrade</option>
+                </select>
+                <div id="buyfields">
+                    <input type="text" name="sell_device"  placeholder="Device (e.g Samsung S21)">
+                    <input type="text" name="buy_budget"  placeholder="Enter your budget  ">
+                     <select name="buy_condition" aria-label="buy_condition">
+                        <option value="condition" disabled>Condition (Uk used / New)</option>
+                        <option value="UK-Used">Uk Used</option>
+                        <option value="new">New</option>
+                        <option value="Open-box">Open Box</option>
+                     </select>
+                </div>
+                <div id="sellfields">
+                    <input type="text" name="sell_device"   placeholder="Device (e.g iPhone 17 Air)">
+                    <input type="text" name="condition"   placeholder="Condition (clean / faulty)">
+                    <input type="text" name="condition"   placeholder="Storage (e.g 128gb)">
+                </div>
+
+                <!-- swap -->
+                 <div id="swapfields">
+                     <input type="text" name="swap_current"   placeholder="Your current device">
+                    <input type="text" name="swap_target"   placeholder="Device you want">
+                    <input type="text" name="swap_budget"   placeholder="Budget to add">
+                 </div>
+    <input type="text" name="name"   placeholder="Your name" required>
+    <input type="tel" name="phone"   placeholder="Phone number" required>
+    <input type="text" name="location"   placeholder="Location (Abuja)" required>
+    <button type="submit">Submit & Continue on Whatsapp</button>
+            </form>
         </section>
     </main>
     <footer>
