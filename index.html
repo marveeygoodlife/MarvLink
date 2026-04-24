@@ -11,10 +11,10 @@
     <header>
         <span class="logo">MarvLink</span>
         <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/">about</a></li>
-                <li><a href="/">products</a></li>
+            <ul id="ul">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#services">services</a></li>
+                <li><a href="#products">products</a></li>
                 <li><a href="/">contact</a></li>
             </ul>
         </nav>
@@ -37,51 +37,89 @@
         <section id="services">
             <h2>What We offer</h2>
 
-            <div class="servicegrid">
-                <div>
+            <div class="grid">
+                <div class="card">
                     <h3>Buy Devices</h3>
                     <p>Get clean phones, laptops and gadgets at good price.</p>
                 </div>
-                <div>
+                <div class="card">
                     <h3>Sell Your Devices</h3>
                     <p>Want to sell your phone or Laptop? We've got the best deal.</p>
                 </div>
-                <div>
+                <div class="card">
                     <h3>Swap / Upgrade</h3>
                     <p>Exchange your old devices and upgrade to a better one.</p>
                 </div>
-                <div>
+                <div class="card">
                     <h3>Accessories</h3>
                     <p>Pouches, chargers, earbuds and more available.</p>
                 </div>
-                <div>
+                <div  class="card">
                     <h3>Delivery</h3>
                     <p>Fast and reliable delivery within Abuja and nationwide.</p>
                 </div>
             </div>
         </section>
-        <section id="product">
-            <h2>Available Devices</h2>
-            <p>Clean phones, laptops and gadgets, ready for immediate use. (Tested trusted, no hidden issues, affordable prices)</p>
-            <a href="" class="btn primary">Chat to see Available stock</a>
-             
-        </section>
+      
+       <section class="products">
+  <h2>Available Products </h2>
+
+  <div class="grid products">
+
+    <!-- CARD -->
+    <div class="card">
+      <img src="https://images.pexels.com/photos/14168781/pexels-photo-14168781.jpeg" alt="iPhone">
+      <h3>iPhone 11</h3>
+      <p>Clean, tested and ready to use</p>
+      <span class="price">₦220,000</span>
+      <a href="https://wa.me/2347015824775" class="productbtn">Order Now</a>
+    </div>
+
+    <!-- CARD -->
+    <div class="card">
+      <img src="https://images.pexels.com/photos/36478646/pexels-photo-36478646.jpeg" alt="Laptop">
+      <h3>HP EliteBook</h3>
+      <p>Fast and reliable performance</p>
+      <span class="price">₦350,000</span>
+      <a href="https://wa.me/2347015824775" class="productbtn">Order Now</a>
+    </div>
+
+    <!-- CARD -->
+    <div class="card">
+      <img src="https://images.pexels.com/photos/30981655/pexels-photo-30981655.jpeg" alt="Earbuds">
+      <h3>Wireless Earbuds</h3>
+      <p>Clear sound, long battery life</p>
+      <span class="price">₦25,000</span>
+      <a href="https://wa.me/2347015824775" class="productbtn">Order Now</a>
+    </div>
+
+    <!-- CARD -->
+    <div class="card">
+      <img src="https://images.pexels.com/photos/28190457/pexels-photo-28190457.jpeg" alt="Charger">
+      <h3>Fast Charger</h3>
+      <p>Quick and safe charging</p>
+      <span class="price">₦15,000</span>
+      <a href="https://wa.me/2347015824775" class="productbtn">Order Now</a>
+    </div>
+
+  </div>
+</section>
         <section id="whyus">
         <h2>why choose marvlink</h2>
-        <div id="whyuscards">
+        <div class="grid">
             <div class="card">
                 <h3>Clean and Tested Devices</h3>
                 <p>All devices & accessories are tested properly.</p>
             </div>
             <div class="card">
-                <h3>🚚 Fast Response</h3>
+                <h3>Fast Response</h3>
                 <p>We reply fast and offer you smooth transactions.</p>
             </div>
-            <div class="card">
+          <div class="card">
                 <h3>Trusted plug</h3>
                 <p>Reliable service you can count on.</p>
             </div>
-            <div class="card">
+          <div class="card">
                 <h3>fast delivery</h3>
                 <p>We deliver the same day within Abuja and 2-3 days nationwide.</p>
             </div>
@@ -94,12 +132,12 @@
             <!-- add image proof/screenshots -->
         </section>
         <section id="cta">
-            <h2>Ready to buy, sell or swap? 🔥</h2>
+            <h2>Ready to buy, sell or swap? </h2>
             <p>Message now lets get you a premium device.</p>
             
-            <div class="btns">
-                <a href="https://wa.me/2347053902558" class="whatsbtn"> chat on whatsapp</a>
-                <a href="tel:07015824775" class="whatsbtn"> call now</a>
+            <div class="herobtns">
+                <a href="https://wa.me/2347053902558" class="btn primary"> chat on whatsapp</a>
+                <a href="tel:07015824775" class="btn primary"> call now</a>
             </div>
         </section>
         <section id="formsection">
@@ -135,6 +173,7 @@
                     <input type="text" name="swap_target"   placeholder="Device you want">
                     <input type="text" name="swap_budget"   placeholder="Budget to add">
                  </div>
+              
     <input type="text" name="name"   placeholder="Your name" required>
     <input type="tel" name="phone"   placeholder="Phone number" required>
     <input type="text" name="location"   placeholder="Location (Abuja)" required>
@@ -142,21 +181,48 @@
             </form>
         </section>
     </main>
-    <footer>
-            <div>
-                <h2>MarvLink</h2>
-                <p>Buy. Sell. Swap</p>
-                <p>Phones. Laptops. Accessories. Gadgets</p>
-                <address>
-                    <pre>
-📍Maitama, Abuja
-call: 07053902558
-                    </pre>
-                </address>
-                <p>
-                    Delivery available nationwide
-                </p>
-            </div>
-        </footer>
+    <footer class="footer">
+
+  <div class="footer-container">
+
+    <!-- BRAND -->
+    <div class="footer-section">
+      <h3>MarvLink 🔌</h3>
+      <p>Buy • Sell • Swap</p>
+      <p>Phones • Laptops • Accessories • Gadgets</p>
+    </div>
+
+    <!-- SERVICES -->
+    <div class="footer-section">
+      <h4>Services</h4>
+      <ul>
+        <li>Buy Devices</li>
+        <li>Sell Your Device</li>
+        <li>Swap / Upgrade</li>
+        <li>Accessories</li>
+        <li>Delivery</li>
+      </ul>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="footer-section">
+      <h4>Contact</h4>
+      <p> Banex Plaza, Abuja</p>
+      <p> Call: 07015824775</p>
+      <p> WhatsApp: 07053902558</p>
+
+      <a href="https://wa.me/2347015824775" class="footer-btn">
+        Chat on WhatsApp
+      </a>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM -->
+  <div class="footer-bottom">
+    <p>©️ 2026 MarvLink. All rights reserved.</p>
+  </div>
+
+</footer>
 </body>
 </html>
