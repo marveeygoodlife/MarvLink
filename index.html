@@ -9,13 +9,16 @@
 </head>
 <body>
     <header>
-        <span class="logo">MarvLink</span>
+<div id="hero">
+
+<div id="navdiv">
+ <span class="logo">MarvLink</span>
         <nav>
             <ul id="ul">
                 <li><a href="#hero">Home</a></li>
                 <li><a href="#services">services</a></li>
-                <li><a href="#products">products</a></li>
-                <li><a href="/">contact</a></li>
+                <li><a href="#product">products</a></li>
+                <li><a href="#formsection">contact</a></li>
             </ul>
         </nav>
         <button type="button" aria-label="Open Menu" id="togglebtn">
@@ -23,17 +26,23 @@
             <span class="bar"></span>
             <span class="bar"></span>
         </button>
-    </header>
-    <main>
-        <section id="hero">
+</div>
+
             <div class="herocontainer">
-                    <h1> <span class="class">Buy, Sell & Swap </span> Phones, Laptops & Gadgets in abuja</h1>
+                <div>
+                     <h1> <span class="bluespan">Buy, Sell & Swap </span> Phones, Laptops & Gadgets in abuja</h1>
                     <p>Get clean devices, sell your old ones, or swap for an upgrade. Accessories and fast delivery available  </p>
             <div class="herobtns">
  <a href="https://wa.me/2347053902558" class="btn primary">Chat on WhatsApp</a>                         <a href="#product" class="btn secondary">View Available Devices</a>
                     </div>
+                </div>
                </div>
-        </section>
+        </div>
+    </header>
+    <main>
+        <!-- <section id="hero">
+            
+        </section> -->
         <section id="services">
             <h2>What We offer</h2>
 
@@ -61,7 +70,7 @@
             </div>
         </section>
       
-       <section class="products">
+       <section id="product" class="products">
   <h2>Available Products </h2>
 
   <div class="grid products">
@@ -133,11 +142,13 @@
         </section>
         <section id="cta">
             <h2>Ready to buy, sell or swap? </h2>
-            <p>Message now lets get you a premium device.</p>
+            <div>
+                <p>Message now lets get you a premium device.</p>
             
             <div class="herobtns">
-                <a href="https://wa.me/2347053902558" class="btn primary"> chat on whatsapp</a>
-                <a href="tel:07015824775" class="btn primary"> call now</a>
+                <a href="https://wa.me/2347053902558" class="btn primary  chatbtn"> chat on whatsapp</a>
+                <a href="tel:07015824775" class="btn primary chatbtn"> call now</a>
+            </div>
             </div>
         </section>
         <section id="formsection">
@@ -146,15 +157,17 @@
 
             <form action="" id="leadForm">
                 <label>What do you want to do?</label>
-                <select name="action" id="action" aria-label="lead-Action">
+                <select name="action" id="action" aria-label="lead-Action"  class="select">
                     <option value="buy"> Buy a device</option>
                     <option value="sell"> Sell my device</option>
                     <option value="swap"> Swap / Upgrade</option>
                 </select>
+
+                <!-- BUYFIELDS -->
                 <div id="buyfields">
-                    <input type="text" name="sell_device"  placeholder="Device (e.g Samsung S21)">
-                    <input type="text" name="buy_budget"  placeholder="Enter your budget  ">
-                     <select name="buy_condition" aria-label="buy_condition">
+                    <input type="text" name="sell_device" class="input"  placeholder="Device (e.g Samsung S21)">
+                    <input type="text" name="buy_budget"  placeholder="Enter your budget"  class="input">
+                     <select name="buy_condition" aria-label="buy_condition"  class="select">
                         <option value="condition" disabled>Condition (Uk used / New)</option>
                         <option value="UK-Used">Uk Used</option>
                         <option value="new">New</option>
@@ -162,21 +175,21 @@
                      </select>
                 </div>
                 <div id="sellfields">
-                    <input type="text" name="sell_device"   placeholder="Device (e.g iPhone 17 Air)">
-                    <input type="text" name="condition"   placeholder="Condition (clean / faulty)">
-                    <input type="text" name="condition"   placeholder="Storage (e.g 128gb)">
+                    <input type="text" name="sell_device"   placeholder="Device (e.g iPhone 17 Air)"  class="input">
+                    <input type="text" name="condition"   placeholder="Condition (clean / faulty)" class="input">
+                    <input type="text" name="condition"   placeholder="Storage (e.g 128gb)" class="input">
                 </div>
 
                 <!-- swap -->
                  <div id="swapfields">
-                     <input type="text" name="swap_current"   placeholder="Your current device">
-                    <input type="text" name="swap_target"   placeholder="Device you want">
-                    <input type="text" name="swap_budget"   placeholder="Budget to add">
+                     <input type="text" name="swap_current"   placeholder="Your current device" class="input">
+                    <input type="text" name="swap_target"   placeholder="Device you want" class="input">
+                    <input type="text" name="swap_budget"   placeholder="Budget to add" class="input">
                  </div>
               
-    <input type="text" name="name"   placeholder="Your name" required>
-    <input type="tel" name="phone"   placeholder="Phone number" required>
-    <input type="text" name="location"   placeholder="Location (Abuja)" required>
+    <input type="text" name="name"   placeholder="Your name" required class="input">
+    <input type="tel" name="phone"   placeholder="Phone number" required class="input">
+    <input type="text" name="location"   placeholder="Location (Abuja)" required class="input">
     <button type="submit">Submit & Continue on Whatsapp</button>
             </form>
         </section>
@@ -187,9 +200,18 @@
 
     <!-- BRAND -->
     <div class="footer-section">
-      <h3>MarvLink 🔌</h3>
-      <p>Buy • Sell • Swap</p>
-      <p>Phones • Laptops • Accessories • Gadgets</p>
+      <h2>MarvLink 🔌</h2>
+      <p>Buy • <span class="bluespan">Sell</span>   • Swap</p>
+
+      <div class="loopdiv">
+        <h2 id="looph2"> <span>
+            <span class="text">Phone</span>
+            <span class="text">Laptops</span>
+            <span class="text">Gadgets</span>
+            <span class="text">Accessories</span>
+            </span>
+        </h2>
+      </div>
     </div>
 
     <!-- SERVICES -->
