@@ -34,3 +34,25 @@ document.getElementById("leadForm").addEventListener("submit", function(e) {
 toggleBtn.addEventListener("click", () => {
   ul.classList.toggle("active");
 });
+
+// Image preview
+const imageInput = document.getElementById("imageInput");
+const preview = document.getElementById("preview");
+
+imageInput.addEventListener("change", function() {
+  preview.innerHTML = ""; // Clear previous previews
+
+  const files = this.files;
+  if (files) {
+    Array.from(files).forEach((file) => {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const img = document.createElement("img");
+        img.src = e.target.result;
+        img.classList.add("preview-image");
+        preview.appendChild(img);
+      }
+      reader.readAsDataURL(file);
+    });
+  }
+});
