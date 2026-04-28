@@ -56,3 +56,12 @@ imageInput.addEventListener("change", function() {
     });
   }
 });
+
+document.addEventListener("click", (e) => {
+  const ulOpen = ul.classList.contains("active");
+  const clickedToggle = toggleBtn.contains(e.target);
+  const clickedUl = ul.contains(e.target);
+  if (ulOpen && !clickedToggle && !clickedUl) {
+    ul.classList.remove('active');
+  }
+})
