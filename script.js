@@ -1,9 +1,12 @@
+"use strict";
+
 const action = document.getElementById("action");
-const buyFields = document.getElementById("buyfields");
-const sellFields = document.getElementById("sellfields");
-const swapFields = document.getElementById("swapfields");
-const ul = document.getElementById("ul")
-const toggleBtn = document.getElementById("togglebtn")
+const buyFields = document.getElementById("buyFields");
+const sellFields = document.getElementById("sellFields");
+const swapFields = document.getElementById("swapFields");
+const ul = document.getElementById("ul");
+const toggleBtn = document.getElementById("togglebtn");
+const form = document.getElementById("leadForm");
 
 action.addEventListener("change", () => {
   buyFields.style.display = "none";
@@ -65,3 +68,58 @@ document.addEventListener("click", (e) => {
     ul.classList.remove('active');
   }
 })
+
+/* INPUT VALIDATION */
+const inputs = document.querySelectorAll("input, select");
+
+inputs.forEach(input => {
+  input.addEventListener("input", () => {
+    validateField(input);
+  });
+});
+
+/* submit validation */
+form.addEventListener("submit", (e) => {
+  let isValid = true;
+  inputs.forEach(input => {
+    if (!validateField(input)) {
+      isValid = false;
+    }
+  });
+  if (!isValid) {
+    e.preventDefault();
+  }
+})
+
+/* validation function */
+function validateField(input) {
+  const group = input.parentElement;
+  const errorMsg = group.querySelector(".errorMsg");
+  //skip hidden file
+  if (input.type === "file" && input.files.length === 0) {
+    errorMsg.textContent = "";
+    return true;
+  }
+  if (input.offsetParent === null) {
+    errorMsg.textContent = "";
+    return true;
+  }
+  if (input.hasAttribute("required") && input.value.trim() === "") {
+    input.classList.add("error");
+    input.classList.remove("success");
+    if (errorMsg) {
+      errorMsg.textContent = "This field is required";
+      errorMsg.style.display = "block";
+    }
+    return false;
+  } else {
+    input.classList.remove("error");
+    input.classList.add("success");
+    if (errorMsg) {
+      errorMsg.textContent = "";
+      errorMsg.style.display = "none";
+    }
+    return true;
+  } 
+  
+}

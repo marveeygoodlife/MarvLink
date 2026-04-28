@@ -416,12 +416,12 @@ button:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 20px rgba(30, 144, 255, 0.25);
 }
-#buyfields, #swapfields, #sellfields {
+#buyFields, #swapFields, #sellFields {
 display: grid;
 grid-template-columns: 1fr;
 gap: 1rem;
 }
-#swapfields, #sellfields {
+#swapFields, #sellFields {
     display: none;
 }
 /* live images preview */
@@ -443,6 +443,25 @@ gap: 1rem;
     border-radius: 6px;
     object-fit: cover;
     border: 1px solid rgba(255, 255, 255, 0.05);
+}
+/* form validation */
+.errorMsg {
+    color: red;
+    font-size: 0.8rem;
+    margin-top: 4px;
+    display: none;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+input.error, select.error {
+    border: 1px solid red;
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+}
+input.success, select.success {
+    border: 1px solid green;
+    box-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
 }
 /* FOOTER */
 .footer {
@@ -553,6 +572,9 @@ section h2, section h3 {
 /* MEDIA QUERIES */
 
 @media screen and (max-width: 768px) {
+    #swapFields, #sellFields {
+    display: none;
+}
   section h2,section h3,section h4 {
     text-align: center;
   }
@@ -615,10 +637,10 @@ justify-content: center;
 .grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  #swapfields, #sellfields {
+  #swapFields, #sellFields {
     display: none;
 }
- #buyfields, #swapfields, #sellfields {
+ #buyFields, #swapFields, #sellFields {
 display: grid;
 grid-template-columns: repeat(2, 1fr);
  }
@@ -673,7 +695,7 @@ form {
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
  }
-  #swapfields, #sellfields {
+  #swapFields, #sellFields {
     display: none;
 }
 }

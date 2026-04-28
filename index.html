@@ -202,61 +202,124 @@
             <p>Fill this form and continue on whatsApp.</p>
 
             <div class="form_wrapper">
-            <form action="" id="leadForm">
-                <div class="full">
-                <label>What do you want to do?</label>
-                <select name="IwantTo" id="action" aria-label="lead-Action"  class="select">
-                    <option value="buy"> Buy a device</option>
-                    <option value="sell"> Sell my device</option>
-                    <option value="swap"> Swap / Upgrade</option>
-                </select>
-                </div>
-                <!-- BUYFIELDS -->
-                <div id="buyfields" class="full">
-                    <div class="grid2">
-                    <input type="text" name="buy_device" class="input"  placeholder="Device (phone / laptop)">
-                    <input type="text" name="buy_budget"  placeholder="Enter your budget"  class="input">
-                    </div>
-                   
-                     <select name="buy_condition" aria-label="buy_condition"  class="select">
-                        <option value="condition" disabled>Condition (Uk used / New)</option>
-                        <option value="UK-Used">Uk Used</option>
-                        <option value="new">New</option>
-                        <option value="Open-box">Open Box</option>
-                     </select>
-                </div>
-                <div id="sellfields" class="full">
-                     <div class="grid2">    
-                    <input type="text" name="sell_device"   placeholder="Device (e.g iPhone 17 Air)"  class="input">
-                    <input type="text" name="sell_storage"   placeholder="Storage (e.g 128gb)" class="input">
-                     </div>
-                     <input type="text" name="sell_condition"   placeholder="Condition (clean / faulty)" class="input">
+            <form id="leadForm">
 
-                     <!-- upload images -->
-                    <label class="upload-label" for="imageInput">Upload images of your device (Back & Front)</label>
-                    <input type="file" name="device_images" accept="image/*" multiple class="input" id="imageInput">
-                    <!-- preview image -->
-                     <div id="preview" class="preview-grid"></div>
-                </div>
-                <!-- swap -->
-                <div id="swapfields" class="full">
-                            <div class="grid2">
-                    <input type="text" name="swap_current"   placeholder="Your current device" class="input">
-                    <input type="text" name="swap_target"   placeholder="Device you want" class="input">
-                    <input type="text" name="swap_budget"   placeholder="Budget to add" class="input">
-                    </div>
-                </div>
-              
-    <input type="text" name="name"   placeholder="Your name" required class="input">
-    <input type="tel" name="phone"   placeholder="Phone number" required class="input">
+  <!-- ACTION -->
+  <div class="form-group full">
+    <label for="action">What do you want to do?</label>
+    <select name="IwantTo" id="action" class="select" required>
+      <option value="buy">Buy a device</option>
+      <option value="sell">Sell my device</option>
+      <option value="swap">Swap / Upgrade</option>
+    </select>
+    <span class="errorMsg"></span>
+  </div>
 
-    <div class="full"> 
-    <input type="text" name="location"   placeholder="Location (Abuja)" required class="input">
+  <!-- BUY -->
+  <div id="buyFields" class="full">
+    <div class="grid2">
+
+      <div class="form-group">
+        <input type="text" name="buy_device" placeholder="Device (phone / laptop)" class="input" required>
+        <span class="errorMsg"></span>
+      </div>
+
+      <div class="form-group">
+        <input type="text" name="buy_budget" placeholder="Enter your budget" class="input" required>
+        <span class="errorMsg"></span>
+      </div>
+
     </div>
-      <div class="full">
-    <button type="submit">Submit & Continue on Whatsapp</button>
+
+    <div class="form-group">
+      <select name="buy_condition" class="select" required title="buy_condition">
+        <option value="" disabled selected>Condition (Uk used / New)</option>
+        <option value="UK-Used">Uk Used</option>
+        <option value="new">New</option>
+        <option value="Open-box">Open Box</option>
+      </select>
+      <span class="errorMsg"></span>
     </div>
-            </form>
+  </div>
+
+  <!-- SELL -->
+  <div id="sellFields" class="full" style="display: none;">
+    <div class="grid2">
+
+      <div class="form-group">
+        <input type="text" name="sell_device" placeholder="Device (e.g iPhone 11)" class="input" required>
+        <span class="errorMsg"></span>
+      </div>
+
+      <div class="form-group">
+        <input type="text" name="sell_storage" placeholder="Storage (e.g 128GB)" class="input" required>
+        <span class="errorMsg"></span>
+      </div>
+
+    </div>
+
+    <div class="form-group">
+      <input type="text" name="sell_condition" placeholder="Condition (clean / faulty)" class="input" required>
+      <span class="errorMsg"></span>
+    </div>
+
+    <div class="form-group">
+      <label for="imageInput">Upload images (front & back)</label>
+      <input type="file" name="device_images" id="imageInput" accept="image/*" multiple class="input">
+      <span class="errorMsg"></span>
+    </div>
+
+    <div id="preview" class="preview-grid"></div>
+  </div>
+
+  <!-- SWAP -->
+  <div id="swapFields" class="full" style="display: none;">
+    
+    <div class="grid2">
+      <div class="form-group">
+        <input type="text" name="swap_current" placeholder="Your current device" class="input" required>
+        <span class="errorMsg"></span>
+      </div>
+
+      <div class="form-group">
+        <input type="text" name="swap_target" placeholder="Device you want" class="input" required>
+        <span class="errorMsg"></span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <input type="text" name="swap_budget" placeholder="Budget to add" class="input">
+      <span class="errorMsg"></span>
+    </div>
+
+  </div>
+
+  <!-- USER INFO -->
+  <div class="grid2">
+
+    <div class="form-group">
+      <input type="text" name="name" placeholder="Your name" class="input" required>
+      <span class="errorMsg"></span>
+    </div>
+
+    <div class="form-group">
+      <input type="tel" name="phone" placeholder="Phone number" class="input" required>
+      <span class="errorMsg"></span>
+    </div>
+
+  </div>
+
+  <div class="form-group full">
+    <input type="text" name="location" placeholder="Location (Abuja)" class="input" required>
+    <span class="errorMsg"></span>
+  </div>
+
+  <!-- SUBMIT -->
+  <div class="full">
+    <button type="submit">Submit & Continue on WhatsApp</button>
+  </div>
+
+</form>
              </div>
             </div>
         </section>
