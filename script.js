@@ -172,7 +172,6 @@ window.addEventListener("scroll", () => {
 });
 
 /* intersection observer */
-
 revealElements.forEach((el) => { el.classList.add("reveal") });
 
 const observer = new IntersectionObserver((entries, obs) => {
