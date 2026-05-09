@@ -27,11 +27,39 @@ body {
     font-size: 1.2rem;
     margin-left: 1rem;
 }
+a.skip-link {
+    position: absolute;
+    top: -60px;
+    left: 0;
+    background: var(--accent);
+    color: #000;
+    padding: 8px 16px;
+    z-index: 100;
+    transition: top 0.3s ease;
+}
+a.skip-link:focus {
+    top: 0;
+    font-weight: 900;
+    background: var(--accent);
+     color: black;
+}
 header {
     position: relative;
      background: url('images/secondbackground.jpeg') center/cover no-repeat;
      min-height: 100vh;
      background-position: right center;
+}
+.reveal {
+    opacity: 0;
+    transition: transform .3s ease-in-out;
+    will-change: auto;
+    transform: translateY(25px);
+
+}
+
+.revealVisible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
  header:before {
@@ -40,7 +68,7 @@ header {
     inset: 0;
     background: linear-gradient(rgba(0,0,0,0.09), rgba(30,144,255, 0.07));
   }
-
+ 
  .herocontainer {
     padding: 20px;
     position: relative;
@@ -355,7 +383,7 @@ form {
     box-shadow: 4px 4px  rgba(30,144,255, 0.07);
     transition: transform .3s ease-in-out;
  margin: 0 auto;
-max-width: 500px;
+max-width: 400px;
 background: #111827;
 display: grid;
 grid-template-columns: 1fr;
@@ -368,8 +396,8 @@ form:hover {
 transform: translateY(10px);
 }
 form .input, form select {
-    padding: 14px  12px;
-    border-radius: 10px;
+    padding:  8px 12px;
+    border-radius: 5px;
     border: 1px solid rgba(255, 255, 255, 0.08);
     outline: none;
     width: 100%;
@@ -378,6 +406,7 @@ form .input, form select {
      color: #fff;
     transition: all 0.25s ease;
     margin: 5px 0;
+    box-sizing: border-box;
  }
  .input:focus, select:focus  {
     border: 1px solid #1E90FF;
@@ -465,6 +494,7 @@ input.success, select.success {
 }
 /* FOOTER */
 .footer {
+    position: relative;
   background: var(--background-color);
   color: #fff;
   padding: 40px 20px 20px;
@@ -472,23 +502,16 @@ input.success, select.success {
    border-top: 1px solid rgba(255,255,255,0.05);
 }
 
-/*FOOTER  CONTAINER */
 .footer-container {
   display: flex;
   flex-direction: column;
   gap: 25px;
-padding-left: 10px;}
+padding-left: 10px;
+}
 
-/* FOOTER SECTION */
- 
 .footer-section h3,
 .footer-section h4 {
   margin-bottom: 10px;
-}
-
-.footer-section p {
-  color: #ccc;
-  margin: 10px 0;
 }
 
 .footer-section ul {
@@ -496,8 +519,8 @@ padding-left: 10px;}
   padding: 0;
 }
 
-.footer-section ul li {
-  margin-bottom: 10px 0;
+.footer-section ul li, .footer-section p {
+  margin: 16px 0;
   color: #ccc;
 }
 
@@ -521,6 +544,37 @@ padding-left: 10px;}
   padding-top: 15px;
   text-align: center;
   color: #777;
+}
+
+.scrollBtn {
+    /* height: 40px;
+    width: 40px; */
+    border-radius: 50%;
+    color:var(--white);
+    box-sizing: var(--shadow);
+    border: transparent;
+    position: fixed;
+    right: -100%;
+    bottom: 5rem;
+    text-align: center;
+    z-index: 20;
+    opacity: .6;
+    font-size: 1.2rem;
+    background: gold;
+    padding: 5px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform .3s ease-in-out, opacity 1s ease-in-out;
+    text-decoration: none;
+}
+.showScroll {
+    right: 3rem;
+}
+.scrollBtn:hover {
+    transform: scale(1.05);
+    opacity: 1;
 }
 .loopdiv h2#looph2 {
      padding: 0;
@@ -630,9 +684,16 @@ justify-content: center;
 #togglebtn {
     display: none;
 }
-
- form {
-        max-width: 500px;
+#btncontain {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+   .chatbtn {
+    max-width: 50%;
  }
 .grid {
     grid-template-columns: repeat(2, 1fr);
@@ -688,8 +749,7 @@ place-items: center;  }
   }
 form {
     grid-template-columns: repeat(2, 1fr);
-    max-width: 700px;
- }
+  }
  .grid2 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -697,6 +757,10 @@ form {
  }
   #swapFields, #sellFields {
     display: none;
+}
+
+#btncontain {
+    gap: 3.5rem;
 }
 }
 

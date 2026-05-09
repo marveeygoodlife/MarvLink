@@ -3,16 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Buy clean and affordable phones, gadgets, accessories in Abuja. Fast delivery, trusted services. Order now from MarvLink">
+    <meta name="description" content="We help busy peple buy, set up, and manage their phones and devices stress-free. Order now from MarvLink Mobile.">
+    <meta name="author" content="Marveey Goodlife">
+        <!--   Open Graph Meta Tags for social media sharing -->
+    <meta property="og:title" content="MarvLink Mobile - Your Personal Tech Concierge" />
+    <meta property="og:description" content="We help busy peple buy, set up, and manage their phones and devices stress-free." />
+    <meta property="og:image" content="/images/secondbackground.jpeg"/>
+    <meta property="og:url" content="https://marvlink.vercel.app/" />
+    <meta property="og:type" content="website"/>
+
+    <!-- twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="MarvLink Mobile - Your Personal Tech Concierge"/>
+    <meta name="twitter:description" content="We help busy people buy, set up, and manage their phones and devices stress-free." />
+    <meta name="twitter:image" content="/images/secondbackground.jpeg"/>
+    <meta name="twitter:creator" content="@marveeygoodlife" />
+    <meta name="twitter:site" content="@marveeygoodlife" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
     <link rel="stylesheet" href="style.css">
-    <title>Buy devices in abuja | MarvLink</title>
+    <title> MarvLink Mobile | Tech Concierge</title>
 </head>
-<body>
+<body id="body">
+      <a href="#main" class="skip-link">Skip-to-main-content</a>
     <header>
 <div id="hero">
 
 <div id="navdiv">
- <span class="logo">MarvLink</span>
+ <span class="logo">MarvLink Mobile</span>
         <nav>
             <ul id="ul">
                 <li><a href="#hero">Home</a></li>
@@ -30,8 +49,10 @@
 
             <div class="herocontainer">
                 <div>
-                     <h1> <span class="bluespan">Buy, Sell & Swap </span> Phones, Laptops & Gadgets in abuja</h1>
-                    <p>Get clean devices, sell your old ones, or swap for an upgrade. Accessories and fast delivery available  </p>
+                     <h1> <span class="bluespan">Buy, Sell & Swap </span> Phones, Laptops & Gadgets.</h1>
+        <p>MarvLink Mobile - Your personal tech concierge in Abuja. 
+          <br> we handle everything tech so you don't stress.
+          <br>Device sourcing | Setup | Data transfer | Tech Support</p>
             <div class="herobtns">
  <a href="https://wa.me/2347053902558" class="btn primary">Chat on WhatsApp</a>                         <a href="#product" class="btn secondary">View Available Devices</a>
                     </div>
@@ -39,7 +60,7 @@
                </div>
         </div>
     </header>
-    <main>
+    <main id="main">
         <!-- <section id="hero">
             
         </section> -->
@@ -49,7 +70,7 @@
             <div class="grid">
                 <div class="card">
                     <h3>Buy Devices</h3>
-                    <p>Get clean phones, laptops and gadgets at good price.</p>
+                    <p>Get clean phones, laptops, accessories and gadgets at good price.</p>
                 </div>
                 <div class="card">
                     <h3>Sell Your Devices</h3>
@@ -60,8 +81,8 @@
                     <p>Exchange your old devices and upgrade to a better one.</p>
                 </div>
                 <div class="card">
-                    <h3>Accessories</h3>
-                    <p>Pouches, chargers, earbuds and more available.</p>
+                    <h3>Setup</h3>
+                    <p>We fully set up your phone, transfer data, install apps, & opimize everything.</p>
                 </div>
                 <div  class="card">
                     <h3>Delivery</h3>
@@ -166,7 +187,7 @@
             </div>
           <div class="card">
                 <h3>Trusted plug</h3>
-                <p>Reliable service you can count on.</p>
+                <p>We manage your entire tech experience so you don't have to worry about anything.</p>
             </div>
           <div class="card">
                 <h3>fast delivery</h3>
@@ -189,7 +210,7 @@
             <div class="text-block">
                 <p>Message now lets get you a premium device.</p>
             
-            <div class="herobtns">
+            <div class="herobtns" id="btncontain">
                 <a href="https://wa.me/2347053902558" class="btn primary  chatbtn"> chat on whatsapp</a>
                 <a href="tel:07015824775" class="btn primary chatbtn"> call now</a>
             </div>
@@ -303,7 +324,7 @@
     </div>
 
     <div class="form-group">
-      <input type="tel" name="phone" placeholder="Phone number" class="input" required>
+      <input type="number" name="phone" placeholder="Phone number" class="input" required min="0">
       <span class="errorMsg"></span>
     </div>
 
@@ -346,7 +367,7 @@
 
     <!-- SERVICES -->
     <div class="footer-section">
-      <h4>Services</h4>
+      <h2>Services</h2>
       <ul>
         <li>Buy Devices</li>
         <li>Sell Your Device</li>
@@ -358,7 +379,7 @@
 
     <!-- CONTACT -->
     <div class="footer-section">
-      <h4>Contact</h4>
+      <h2>Contact</h2>
       <p> Banex Plaza, Abuja</p>
       <p> Call: 07015824775</p>
       <p> WhatsApp: 07053902558</p>
@@ -369,7 +390,7 @@
     </div>
 
   </div>
-
+<a href="#body" id="scrollBtn" class="scrollBtn">&UpArrow;</a>
   <!-- BOTTOM -->
   <div class="footer-bottom">
     <p>©️ 2026 MarvLink. All rights reserved.</p>
