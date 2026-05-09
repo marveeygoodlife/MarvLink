@@ -12,8 +12,7 @@ const imageInput = document.getElementById("imageInput");
 const preview = document.getElementById("preview");
 const inputs = document.querySelectorAll("input, select");
 const ulLinks = Array.from(document.querySelectorAll("nav ul a"));
-const elementsToReveal = "h1, section, .card p, h2, h3, h4, form, footer, .btn";
-const revealElements = Array.from(document.querySelectorAll(elementsToReveal));
+const revealElements = document.querySelectorAll(".reveal");
 
 /* open/close ul */
 toggleBtn.addEventListener("click", () => {
@@ -172,14 +171,12 @@ window.addEventListener("scroll", () => {
 });
 
 /* intersection observer */
-revealElements.forEach((el) => { el.classList.add("reveal") });
-
-const observer = new IntersectionObserver((entries, obs) => {
+const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       entry.target.classList.add("revealVisible");
-      obs.unobserve(entry.target)
-    }
-  }, { threshold: 0.15 });
+      observer.unobserve(entry.target);
+    };
+  }, { threshold: 0.15, rootMargin:"0px 0px -50px 0px" });
 });
 revealElements.forEach((el)=> {observer.observe(el)})

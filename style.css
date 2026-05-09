@@ -49,18 +49,6 @@ header {
      min-height: 100vh;
      background-position: right center;
 }
-.reveal {
-    opacity: 0;
-    transition: transform .3s ease-in-out;
-    will-change: auto;
-    transform: translateY(25px);
-
-}
-
-.revealVisible {
-    opacity: 1;
-    transform: translateY(0);
-}
 
  header:before {
     content: "";
@@ -632,6 +620,9 @@ section h2, section h3 {
   section h2,section h3,section h4 {
     text-align: center;
   }
+  .reveal {
+    transform: translateY(20px);
+  }
 }
 /* media queries: TABLETs */
 @media screen  and (min-width:768px){
@@ -768,4 +759,36 @@ form {
   .grid {
     grid-template-columns: repeat(4, 1fr);
   }
+}
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+.reveal {
+    opacity: 0;
+    transition: transform .8s ease, opacity .8s ease, filter .8s ease;
+     /* transform: translateY(40px);
+     filter: blur(6px); */
+}
+
+.revealVisible {
+    opacity: 1;
+    transform: translateX(0) translateY(0) scale(1);
+    filter: blur(0);
+}
+.reveal-up {
+    transform: translateY(25px);
+}
+.reveal-scale {
+    transform: scale(0.9);
+}
+.reveal-right {
+    transform: translateX(25px);
+}
+.reveal-left {
+    transform: translateX(-35px);
 }
